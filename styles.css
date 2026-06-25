@@ -1,0 +1,214 @@
+/* =========================
+   RESET BÁSICO
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+a {
+  color: #38bdf8;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #020617;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.branding h1 {
+  font-size: 20px;
+}
+
+.branding p {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.nav-list {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+
+/* =========================
+   LAYOUT PRINCIPAL
+========================= */
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+section h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+  padding: 60px 0;
+}
+
+.hero h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.hero p {
+  color: #cbd5e1;
+  max-width: 600px;
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.hero-actions a {
+  padding: 10px 15px;
+  border: 1px solid #38bdf8;
+  border-radius: 6px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.hero-actions a:hover {
+  transform: translateY(-3px);
+  background: #0ea5e9;
+}
+
+/* =========================
+   SKILLS
+========================= */
+#skills article {
+  margin-bottom: 20px;
+}
+
+#skills ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#skills li {
+  background: #1e293b;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+#skills li:hover {
+  transform: scale(1.05);
+  background: #334155;
+}
+
+/* =========================
+   PROJECTS + EXPERIÊNCIA (CARDS)
+========================= */
+#projetos article,
+#experiencia article {
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#projetos article:hover,
+#experiencia article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   CONTACTO
+========================= */
+#contacto form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #1e293b;
+  color: white;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #38bdf8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: #0ea5e9;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #020617;
+  color: #94a3b8;
+}
+
+/* =========================
+   ANIMAÇÃO GLOBAL
+========================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

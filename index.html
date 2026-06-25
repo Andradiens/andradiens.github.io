@@ -1,16 +1,153 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="pt-pt">
-  <head>
-    <title> Portfólio Gonçalo Andrade</title>
-  </head>
-  <body>
-    <header>
-      <nav>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Gonçalo Andrade | Portfolio</title>
+</head>
+
+<body>
+  <header>
+    <div class="branding">
+      <h1>Gonçalo Andrade</h1>
+      <p>Software Developer | TGPSI Student</p>
+    </div>
+
+    <nav>
+      <ul class="nav-list">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#experiencia">Experiência</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <h2>Olá, eu sou o Gonçalo Andrade</h2>
+
+      <p>
+        Estudante de TGPSI focado em desenvolvimento de software e web development.
+        Interesse em criar aplicações funcionais, simples e bem estruturadas.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projetos">Ver Projetos</a>
+        <a href="#contacto">Contactar</a>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <h2>Sobre mim</h2>
+
+      <p>
+        Desde cedo desenvolvi interesse por tecnologia e programação.
+        Atualmente estudo na Escola Secundária D. Inês de Castro em Alcobaça no curso TGPSI.
+      </p>
+
+      <p>
+        Tenho como objetivo seguir para Engenharia Informática e evoluir as minhas competências em
+        desenvolvimento de software, especialmente web development e programação backend.
+      </p>
+
+      <p>
+        Sou focado, autodidata e gosto de aprender novas tecnologias e resolver problemas.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Competências Técnicas</h2>
+
+      <article>
+        <h3>Linguagens</h3>
         <ul>
-          <li><a href='#inicio'>Início</a></li>
-          <li><a href='#sobre'>Sobre Mim</a></li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Python</li>
         </ul>
-      </nav>
-    </header>
-  </body>
+      </article>
+
+      <article>
+        <h3>Ferramentas</h3>
+        <ul>
+          <li>Notepad++</li>
+          <li>GitHub</li>
+          <li>VS Code</li>
+		  <li>Proxmox</li>
+		  <li>TrueNAS</li>
+        </ul>
+      </article>
+
+    <section id="projetos">
+      <h2>Projetos</h2>
+
+      <article>
+        <h3>Projeto 1 — Portefólio pessoal</h3>
+        <p>Site estático em HTML para apresentação pessoal e projetos.</p>
+        <p>Tecnologias: HTML</p>
+        <a href="#">GitHub</a>
+      </article>
+	  
+	  <article>
+        <h3>Projeto 2 — TrueNAS Tutorial de instalação</h3>
+        <p>Tutorial de instalação detalhada para novos usuários de TrueNAS.</p>
+        <a href="https://docs.google.com/document/d/1QIF6lBI8B9OtiBukKJFCVkJO1bcycnRL0UioYcNSF5w/edit?usp=sharing">Google Docs</a>
+      </article>
+    </section>
+
+    <section id="experiencia">
+      <h2>Experiência</h2>
+
+      <article>
+        <h3>Formação académica</h3>
+        <p>Escola Secundária D. Inês de Castro — TGPSI</p>
+        <p>2024 - 2027</p>
+      </article>
+
+      <article>
+        <h3>Estágio</h3>
+        <p>Pc Caldas — Suporte técnico / manutenção</p>
+        <p>2026</p>
+      </article>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+
+      <address>
+        <p>Email: <a href="mailto:saburousuzumoto@gmail.com">saburousuzumoto@gmail.com</a></p>
+        <p>GitHub: <a href="#">github.com/andradiens</a></p>
+      </address>
+
+      <form>
+        <label>
+          Nome
+          <input type="text" name="nome" required>
+        </label>
+
+        <label>
+          Email
+          <input type="email" name="email" required>
+        </label>
+
+        <label>
+          Mensagem
+          <textarea name="mensagem" required></textarea>
+        </label>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Gonçalo Andrade — Portfolio pessoal</p>
+  </footer>
+
+</body>
 </html>
