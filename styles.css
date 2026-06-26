@@ -27,6 +27,11 @@ a:hover {
   text-decoration: underline;
 }
 
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
 /* =========================
    HEADER
 ========================= */
@@ -114,6 +119,37 @@ section h2 {
 /* =========================
    SKILLS
 ========================= */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.skills-card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.skills-card h3 {
+    margin-bottom: 10px;
+}
+
+.skills-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.skills-card li {
+    background: #334155;
+    padding: 6px 10px;
+    border-radius: 6px;
+    width: fit-content;
+}
+
 #skills article {
   margin-bottom: 20px;
 }
@@ -138,10 +174,151 @@ section h2 {
   background: #334155;
 }
 
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* =========================
-   PROJECTS + EXPERIÊNCIA (CARDS)
+   PROJECTS
 ========================= */
-#projetos article,
+
+.projects-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+
+    margin-top:30px;
+
+}
+
+.project-card{
+
+    background:#1e293b;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    transition:.3s;
+
+}
+
+.project-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.35);
+
+}
+
+.project-card img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+}
+
+.project-content{
+
+    padding:20px;
+
+}
+
+.project-content h3{
+
+    margin-bottom:10px;
+
+}
+
+.project-content p{
+
+    color:#cbd5e1;
+
+    margin-bottom:15px;
+
+}
+
+.tech-stack{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin-bottom:20px;
+
+}
+
+.tech-stack span{
+
+    background:#334155;
+
+    padding:6px 12px;
+
+    border-radius:30px;
+
+    font-size:.8rem;
+
+}
+
+.project-links{
+
+    display:flex;
+
+    justify-content:space-between;
+
+}
+
+.project-links a{
+
+    border:1px solid #38bdf8;
+
+    padding:8px 15px;
+
+    border-radius:6px;
+
+    transition:.3s;
+
+}
+
+.project-links a:hover{
+
+    background:#38bdf8;
+
+    color:#0f172a;
+
+}
+
+.project-image{
+
+    height:220px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#334155;
+
+    font-size:1.2rem;
+
+    color:#94a3b8;
+
+}
+
+/* =========================
+EXPERIÊNCIA (CARDS)
+========================= */
 #experiencia article {
   background: #1e293b;
   padding: 15px;
@@ -150,7 +327,6 @@ section h2 {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-#projetos article:hover,
 #experiencia article:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
@@ -166,6 +342,15 @@ section h2 {
   margin-top: 15px;
 }
 
+form {
+    width: 100%;
+    max-width: 500px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
 input,
 textarea {
   padding: 10px;
@@ -173,6 +358,12 @@ textarea {
   border-radius: 6px;
   background: #1e293b;
   color: white;
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+  field-sizing: content;
 }
 
 button {
@@ -182,6 +373,7 @@ button {
   background: #38bdf8;
   cursor: pointer;
   transition: all 0.2s ease;
+  width: 100%;
 }
 
 button:hover {
@@ -211,4 +403,76 @@ footer {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    /* HEADER */
+    header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* HERO */
+    .hero {
+        padding: 40px 0;
+        text-align: center;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        max-width: 100%;
+        margin: auto;
+    }
+
+    .hero-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* MAIN */
+    main {
+        padding: 30px 20px;
+    }
+
+    /* TÍTULOS */
+    section h2 {
+        text-align: center;
+    }
+
+    /* SKILLS */
+    #skills article {
+        margin-bottom: 30px;
+    }
+
+    #skills ul {
+        justify-content: center;
+    }
+
+    /* CONTACTO */
+    input,
+    textarea,
+    button {
+        width: 100%;
+    }
+
+    textarea {
+        min-height: 120px;
+    }
+
 }
