@@ -10,7 +10,7 @@
 
 <body>
   <header>
-    <div class="branding">
+    <div class="logo">
       <h1>Gonçalo Andrade</h1>
       <p>Software Developer | TGPSI Student</p>
     </div>
@@ -44,7 +44,7 @@
 		</div>
     </section>
 
-    <section id="sobre">
+    <section id="sobre" class="hidden">
 		<div class="container">
 			<h2>Sobre mim</h2>
 
@@ -64,7 +64,7 @@
 		</div>
     </section>
 
-    <section id="skills">
+    <section id="skills" class="hidden">
 		<div class="container">
 			<h2>Competências Técnicas</h2>
 
@@ -93,28 +93,31 @@
 		</div>
 </section>
 
-    <section id="projetos">
+    <section id="projetos" class="hidden">
+		<h2>Projetos</h2>
 		<div class="container">
-			<h2>Projetos</h2>
 			
 			<div class="projects-grid">
 				<article class="project-card">
-					<div class="project_image">
-						Em Desenvolvimento
+					<div class="project-image">
+						<span class="featured">
+							Em desenvolvimento
+						</span>
 					</div>
 					
-					<div class="project-content">
+					<div class="project-info">
 					
 						<h3>Portfolio</h3>
 						
 						<p>Site estático em HTML para apresentação pessoal e projetos.</p>
 						
-						<div class="teck-stack">
+						<div class="badges">
 							<span> HTML </span>
 							<span> CSS </span>
+							<span> JavaScript </span>
 						</div>
 						
-						<div class="project-links">
+						<div class="project-buttons">
 							<a href="https://github.com/Andradiens"> GitHub </a>
 							<a href="#"> Demo </a>
 						</div>
@@ -122,17 +125,19 @@
 				</article>
 				
 				<article class="project-card">
-					<div class="project_image">
-						Em Desenvolvimento
+					<div class="project-image">
+						<span class="featured">
+							Em desenvolvimento
+						</span>
 					</div>
 					
-					<div class="project-content">
+					<div class="project-info">
 					
 						<h3>TrueNAS Tutorial de instalação</h3>
 						
 						<p>Tutorial de instalação detalhada para novos usuários de TrueNAS</p>
 						
-						<div class="project-links">
+						<div class="project-buttons">
 							<a href="https://docs.google.com/document/d/1QIF6lBI8B9OtiBukKJFCVkJO1bcycnRL0UioYcNSF5w/edit?usp=sharing"> Google Docs </a>
 						</div>
 					</div>
@@ -141,7 +146,7 @@
 		</div>
     </section>
 
-    <section id="experiencia">
+    <section id="experiencia" class="hidden">
 		<div class="container">
 			<h2>Experiência</h2>
 
@@ -159,7 +164,7 @@
 		</div>
     </section>
 
-    <section id="contacto">
+    <section id="contacto" class="hidden">
 		<div class="container">
 			<h2>Contacto</h2>
 
@@ -194,5 +199,28 @@
     <p>© 2026 Gonçalo Andrade — Portfolio pessoal</p>
   </footer>
 
+  <script>
+	const hiddenElements = document.querySelectorAll(".hidden");
+
+	const observer = new IntersectionObserver((entries) => {
+
+		entries.forEach((entry) => {
+
+			if(entry.isIntersecting){
+
+				entry.target.classList.add("show");
+
+			}
+
+		});
+
+	});
+
+	hiddenElements.forEach((element)=>{
+
+		observer.observe(element);
+
+	});
+  </script>
 </body>
 </html>
