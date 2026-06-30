@@ -196,7 +196,7 @@
 
 			<article>
 				<h3>Estágio</h3>
-				<p>Pc Caldas — Suporte técnico / manutenção</p>
+				<p>Pc Caldas — Suporte técnico / Manutenção de portáteis e PCs / Redes</p>
 				<p>2026</p>
 			</article>
 		</div>
@@ -242,9 +242,6 @@
   </footer>
 
 	<script>
-		/* =========================
-		   Intersection Observer
-		========================= */
 		const hiddenElements = document.querySelectorAll(".hidden");
 
 		const observer = new IntersectionObserver((entries) => {
@@ -257,10 +254,6 @@
 
 		hiddenElements.forEach((el) => observer.observe(el));
 
-
-		/* =========================
-		   MOBILE MENU + OVERLAY
-		========================= */
 		const toggle = document.querySelector('.nav-toggle');
 		const navList = document.querySelector('.nav-list');
 		const overlay = document.querySelector('.overlay');
@@ -288,12 +281,10 @@
 
 		toggle.addEventListener('click', toggleMenu);
 
-		/* Close when clicking nav links */
 		document.querySelectorAll('.nav-list a').forEach(link => {
 			link.addEventListener('click', closeMenu);
 		});
 
-		/* Close when clicking overlay */
 		if (overlay) {
 			overlay.addEventListener('click', closeMenu);
 		}
