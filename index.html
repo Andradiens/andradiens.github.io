@@ -26,6 +26,8 @@
       </ul>
     </nav>
 	
+	<div class="overlay"></div>
+	
 	<button class="nav-toggle" aria-label="Abrir menu">
 		<svg class="hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
 			<path class="line top" d="M 2 9 L 48 9"></path>
@@ -239,37 +241,62 @@
     <p>© 2026 Gonçalo Andrade — Portfolio pessoal</p>
   </footer>
 
-  <script>
-	const hiddenElements = document.querySelectorAll(".hidden");
+	<script>
+		/* =========================
+		   Intersection Observer
+		========================= */
+		const hiddenElements = document.querySelectorAll(".hidden");
 
-	const observer = new IntersectionObserver((entries) => {
-
-		entries.forEach((entry) => {
-
-			if(entry.isIntersecting){
-
-				entry.target.classList.add("show");
-
-			}
-
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add("show");
+				}
+			});
 		});
 
-	});
+		hiddenElements.forEach((el) => observer.observe(el));
 
-	hiddenElements.forEach((element)=>{
 
-		observer.observe(element);
-
-	});
-  </script>
-	<script>
+		/* =========================
+		   MOBILE MENU + OVERLAY
+		========================= */
 		const toggle = document.querySelector('.nav-toggle');
 		const navList = document.querySelector('.nav-list');
+		const overlay = document.querySelector('.overlay');
+		const body = document.body;
 
-		toggle.addEventListener('click', () => {
-			navList.classList.toggle('active');
-			toggle.classList.toggle('active');
+		function openMenu() {
+			navList.classList.add('active');
+			toggle.classList.add('active');
+			overlay?.classList.add('active');
+			body.style.overflow = 'hidden';
+		}
+
+		function closeMenu() {
+			navList.classList.remove('active');
+			toggle.classList.remove('active');
+			overlay?.classList.remove('active');
+			body.style.overflow = '';
+		}
+
+		function toggleMenu() {
+			const isOpen = navList.classList.contains('active');
+			if (isOpen) closeMenu();
+			else openMenu();
+		}
+
+		toggle.addEventListener('click', toggleMenu);
+
+		/* Close when clicking nav links */
+		document.querySelectorAll('.nav-list a').forEach(link => {
+			link.addEventListener('click', closeMenu);
 		});
+
+		/* Close when clicking overlay */
+		if (overlay) {
+			overlay.addEventListener('click', closeMenu);
+		}
 	</script>
 </body>
 </html>
