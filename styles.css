@@ -537,7 +537,7 @@ footer {
 		justify-content: space-between;
 		align-items: center;
 
-		padding: 20px;
+		padding: 18px 12px;
 		gap: 0;
 
 		text-align: left;
@@ -553,9 +553,36 @@ footer {
 		white-space: nowrap;
 	}
 	
-	.nav-toggle{
-        display: block;
+	.logo p{
+        font-size: 0.8rem;
+        line-height: 1.2;
     }
+	
+	.nav-toggle{
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		padding: 0;
+		background: none;
+		border: none;
+	}
+	
+	.nav-toggle svg{
+		margin: o;
+		padding: 0;
+	}
+	
+	.nav-toggle.active .top{
+		transform: translateY(15px);
+	}
+
+	.nav-toggle.active .middle{
+		transform: translateY(15);
+	}
+
+	.nav-toggle.active .bottom{
+		transform: translateY(-15px);
+	}
 
     .nav-list {
 		display: none;
@@ -577,6 +604,20 @@ footer {
     .nav-list.active{
         display: flex;
     }
+	
+	.hamburger{
+		display: block;
+		width: 32px;
+		height: 32px;
+	}
+
+	.line{
+		stroke: white;
+		stroke-width: 4;
+		stroke-linecap: round;
+		transition: transform 0.35s ease, opacity 0.2s ease;
+		transform-origin: center;
+	}
 
     /* HERO */
     .hero {

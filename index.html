@@ -27,7 +27,11 @@
     </nav>
 	
 	<button class="nav-toggle" aria-label="Abrir menu">
-		☰
+		<svg class="hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+			<path class="line top" d="M 2 9 L 48 9"></path>
+			<path class="line middle" d="M 2 24 L 48 24"></path>
+			<path class="line bottom" d="M 2 39 L 48 39"></path>
+		</svg>
 	</button>
   </header>
 
@@ -258,13 +262,14 @@
 
 	});
   </script>
-  <script>
-  const toggle = document.querySelector('.nav-toggle');
-  const navList = document.querySelector('.nav-list');
+	<script>
+		const toggle = document.querySelector('.nav-toggle');
+		const navList = document.querySelector('.nav-list');
 
-  toggle.addEventListener('click', () => {
-    navList.classList.toggle('active');
-  });
-</script>
+		toggle.addEventListener('click', () => {
+			navList.classList.toggle('active');
+			toggle.classList.toggle('active');
+		});
+	</script>
 </body>
 </html>
