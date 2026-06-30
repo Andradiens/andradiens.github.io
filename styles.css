@@ -167,6 +167,15 @@ header{
 
 }
 
+.nav-toggle{
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
 /* =========================
    LAYOUT PRINCIPAL
 ========================= */
@@ -280,11 +289,7 @@ section h2 {
   background: #334155;
 }
 
-@media (max-width: 768px) {
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-}
+
 
 /* =========================
    PROJECTS
@@ -297,23 +302,22 @@ section h2 {
     grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
 
     gap:30px;
-
+	
+	align-items: stretch;
 }
 
 .project-card{
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    min-height: 260px;
 
     background:#111827;
-
     border-radius:18px;
-
     overflow:hidden;
-
     border:1px solid rgba(255,255,255,.08);
-
     transition:.35s;
-	
-	min-height: 200px;
-
 }
 
 .project-card:hover{
@@ -369,7 +373,12 @@ section h2 {
 .project-info{
 
     padding:20px;
-
+	
+	display: flex;
+	
+	flex-direction: column;
+	
+	flex: 1;
 }
 
 .badges{
@@ -381,7 +390,7 @@ section h2 {
     flex-wrap:wrap;
 
     margin:20px 0;
-
+	
 }
 
 .badges span{
@@ -399,9 +408,10 @@ section h2 {
 .project-buttons{
 
     display:flex;
-
+	
     justify-content:space-between;
-
+	
+	margin-top: auto;
 }
 
 .project-buttons a{
@@ -520,15 +530,39 @@ footer {
     /* HEADER */
     header {
         flex-direction: column;
+		display: flex;
         gap: 20px;
         padding: 20px;
+		juatify-content: space-between;
         text-align: center;
     }
+	
+	.logo{
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.nav-toggle{
+        display: block;
+    }
 
-    .nav-list {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+    .nav-list{
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+
+        position: absolute;
+        top: 100%;
+        right: 8%;
+
+        background: #111827;
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .nav-list.active{
+        display: flex;
     }
 
     /* HERO */
@@ -580,5 +614,8 @@ footer {
     textarea {
         min-height: 120px;
     }
-
+	
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 }
